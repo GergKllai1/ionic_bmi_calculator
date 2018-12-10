@@ -1,14 +1,12 @@
 <ion-header>
         <ion-navbar>
-            <ion-title>
+            <ion-title class='Title'>
             BMI Caclulator
             </ion-title>
         </ion-navbar>
     </ion-header>
 <ion-content>
-    <div padding>
-            <button block ion-button (click)="switchCounting()">Change counting method!</button>
-        </div>
+    <h2>{{method}}</h2>
     <ion-list>
         <ion-item>
             <ion-label floating>Weight ({{weightOption}})</ion-label>
@@ -22,6 +20,9 @@
 
     <div padding>
         <button block ion-button (click)="calculateBMI()">Calculate!</button>
+    </div>
+    <div padding>
+            <button block ion-button (click)="switchCounting()">Change counting method!</button>
     </div>
 
     <ion-card *ngIf="bmiValue">
