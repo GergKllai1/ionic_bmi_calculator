@@ -1,17 +1,28 @@
+<ion-header>
+        <ion-navbar>
+            <ion-title class='Title'>
+            BMI Caclulator
+            </ion-title>
+        </ion-navbar>
+    </ion-header>
 <ion-content>
+    <h2>{{method}}</h2>
     <ion-list>
         <ion-item>
-            <ion-label floating>Weight (kg)</ion-label>
+            <ion-label floating>Weight ({{weightOption}})</ion-label>
             <ion-input type="number" [(ngModel)]="weight"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label floating>Height (cm)</ion-label>
+            <ion-label floating>Height ({{heightOption}})</ion-label>
             <ion-input type="number" [(ngModel)]="height"></ion-input>
         </ion-item>
     </ion-list>
 
     <div padding>
-        <button block ion-button (click)="calculateBMI()">Calculate!</button>
+        <button block ion-button color="dark" (click)="calculateBMI()">Calculate!</button>
+    </div>
+    <div padding>
+            <button block ion-button color="dark" (click)="switchCounting()">Change counting method!</button>
     </div>
 
     <ion-card *ngIf="bmiValue">
@@ -19,7 +30,7 @@
             BMI Calculation
         </ion-card-header>
         <ion-card-content>
-            <p>You who weights <strong>{{this.weight}}</strong> kilograms and about <strong>{{this.height}}</strong> cm height</p>
+            <p>You, who weight <strong>{{this.weight}} {{this.weightOption}}</strong> and are about <strong>{{this.height}} {{this.heightOption}}</strong> height</p>
             <p>Have BMI value of <strong>{{bmiValue}}</strong></p>
             <p>And considered to be <strong>{{bmiMessage}}</strong></p>
         </ion-card-content>
