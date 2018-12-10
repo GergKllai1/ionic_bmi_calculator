@@ -7,7 +7,7 @@ import { AboutPage } from '../about/about';
 })
 export class TabsPage {
   calculatorTab = CalculatorPage;
-  aboutPage = AboutPage;
+  aboutTab = AboutPage;
 
   constructor() {
 
