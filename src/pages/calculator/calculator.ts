@@ -11,15 +11,27 @@ export class CalculatorPage {
   weight: number;
   bmiValue: number;
   bmiMessage: string;
-  counting: string;
-
+  weightOption: string;
+  heightOption: string;
+  method: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.weightOption = 'kg'
+    this.heightOption= 'cm'
+    this.method = 'Metric'
   }
 
   calculateBMI(){
     if( this.weight > 0 && this.height > 0 ) {
       let calculation = this.weight / ( this.height / 100 * this.height / 100 );
+      this.bmiValue = parseFloat( calculation.toFixed( 2 ) );
+      this.setBMIMessage();
+    }
+  }
+
+  calculateImperialBMI(){
+    if( this.weight > 0 && this.height > 0 ) {
+      let calculation = this.weight * 703 / ( this.height * this.height );
       this.bmiValue = parseFloat( calculation.toFixed( 2 ) );
       this.setBMIMessage();
     }
@@ -37,6 +49,18 @@ export class CalculatorPage {
     }
     else if ( this.bmiValue > 30 ) {
       this.bmiMessage = "obese"
+    }
+  }
+
+  switchCounting() {
+    if(this.method == 'Metric') {
+      this.weightOption = 'pounds';
+      this.heightOption = 'inches';
+      this.method = 'Imperial';
+    }else{
+      this.weightOption = 'kgs';
+      this.heightOption = 'cms';
+      this.method = 'Metric';
     }
   }
 

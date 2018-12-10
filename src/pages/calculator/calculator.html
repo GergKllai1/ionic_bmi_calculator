@@ -6,20 +6,16 @@
         </ion-navbar>
     </ion-header>
 <ion-content>
+    <div padding>
+            <button block ion-button (click)="switchCounting()">Change counting method!</button>
+        </div>
     <ion-list>
         <ion-item>
-            <ion-label>Counting method</ion-label>
-            <ion-select [(ngModel)]="counting">
-                <ion-option value="metric">Metric</ion-option>
-                <ion-option value="imperial">Nintendo64</ion-option>
-            </ion-select>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Weight (kg)</ion-label>
+            <ion-label floating>Weight ({{weightOption}})</ion-label>
             <ion-input type="number" [(ngModel)]="weight"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label floating>Height (cm)</ion-label>
+            <ion-label floating>Height ({{heightOption}})</ion-label>
             <ion-input type="number" [(ngModel)]="height"></ion-input>
         </ion-item>
     </ion-list>
