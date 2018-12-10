@@ -23,15 +23,12 @@ export class CalculatorPage {
 
   calculateBMI(){
     if( this.weight > 0 && this.height > 0 ) {
-      let calculation = this.weight / ( this.height / 100 * this.height / 100 );
-      this.bmiValue = parseFloat( calculation.toFixed( 2 ) );
-      this.setBMIMessage();
-    }
-  }
-
-  calculateImperialBMI(){
-    if( this.weight > 0 && this.height > 0 ) {
-      let calculation = this.weight * 703 / ( this.height * this.height );
+      let calculation;
+      if(this.method == "Metric"){
+        calculation = this.weight / ( this.height / 100 * this.height / 100 );
+      }else if (this.method == "Imperial") {
+        calculation = this.weight * 703 / ( this.height * this.height );
+      };
       this.bmiValue = parseFloat( calculation.toFixed( 2 ) );
       this.setBMIMessage();
     }
