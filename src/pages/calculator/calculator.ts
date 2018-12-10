@@ -26,16 +26,16 @@ export class CalculatorPage {
 
   private setBMIMessage() {
     if ( this.bmiValue < 18.5 ) {
-      this.bmiMessage = "Underweight"
+      this.bmiMessage = "underweight"
     }
     else if ( this.bmiValue > 18.5 && this.bmiValue < 25 ) {
-      this.bmiMessage = "Normal weight"
+      this.bmiMessage = "normal weight"
     }
     else if ( this.bmiValue > 25 ) {
-      this.bmiMessage = "Overweight"
+      this.bmiMessage = "overweight"
     }
     else if ( this.bmiValue > 30 ) {
-      this.bmiMessage = "Obese"
+      this.bmiMessage = "obese"
     }
   }
 

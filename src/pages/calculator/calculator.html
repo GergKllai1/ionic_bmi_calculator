@@ -13,4 +13,16 @@
     <div padding>
         <button block ion-button (click)="calculateBMI()">Calculate!</button>
     </div>
+
+    <ion-card *ngIf="bmiValue">
+        <ion-card-header>
+            BMI Calculation
+        </ion-card-header>
+        <ion-card-content>
+            <p>You who weights <strong>{{this.weight}}</strong> kilograms and about <strong>{{this.height}}</strong> cm height</p>
+            <p>Have BMI value of <strong>{{bmiValue}}</strong></p>
+            <p>And considered to be <strong>{{bmiMessage}}</strong></p>
+        </ion-card-content>
+
+    </ion-card>
 </ion-content>
