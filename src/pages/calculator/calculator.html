@@ -19,10 +19,10 @@
     </ion-list>
 
     <div padding>
-        <button block ion-button (click)="calculateBMI()">Calculate!</button>
+        <button block ion-button color="dark" (click)="calculateBMI()">Calculate!</button>
     </div>
     <div padding>
-            <button block ion-button (click)="switchCounting()">Change counting method!</button>
+            <button block ion-button color="dark" (click)="switchCounting()">Change counting method!</button>
     </div>
 
     <ion-card *ngIf="bmiValue">
@@ -30,7 +30,7 @@
             BMI Calculation
         </ion-card-header>
         <ion-card-content>
-            <p>You who weights <strong>{{this.weight}}</strong> kilograms and about <strong>{{this.height}}</strong> cm height</p>
+            <p>You, who weight <strong>{{this.weight}} {{this.weightOption}}</strong> and are about <strong>{{this.height}} {{this.heightOption}}</strong> height</p>
             <p>Have BMI value of <strong>{{bmiValue}}</strong></p>
             <p>And considered to be <strong>{{bmiMessage}}</strong></p>
         </ion-card-content>
