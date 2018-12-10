@@ -1,5 +1,19 @@
+<ion-header>
+        <ion-navbar>
+            <ion-title>
+            BMI Caclulator
+            </ion-title>
+        </ion-navbar>
+    </ion-header>
 <ion-content>
     <ion-list>
+        <ion-item>
+            <ion-label>Counting method</ion-label>
+            <ion-select [(ngModel)]="counting">
+                <ion-option value="metric">Metric</ion-option>
+                <ion-option value="imperial">Nintendo64</ion-option>
+            </ion-select>
+        </ion-item>
         <ion-item>
             <ion-label floating>Weight (kg)</ion-label>
             <ion-input type="number" [(ngModel)]="weight"></ion-input>
