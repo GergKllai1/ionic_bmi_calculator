@@ -40,22 +40,22 @@ export class CalculatorPage {
 
   private setBMIMessage() {
     if ( this.bmiValue < 18.5 ) {
-      this.bmiMessage = "underweight"
+      this.bmiMessage = "underweight";
     }
     else if ( this.bmiValue > 18.5 && this.bmiValue < 25 ) {
-      this.bmiMessage = "normal weight"
+      this.bmiMessage = "normal weight";
     }
     else if ( this.bmiValue > 25 ) {
-      this.bmiMessage = "overweight"
+      this.bmiMessage = "overweight";
     }
     else if ( this.bmiValue > 30 ) {
-      this.bmiMessage = "obese"
+      this.bmiMessage = "obese";
     }
   }
 
   switchCounting() {
     this.switcher = false
-    if(this.method == 'Metric') {
+    if( this.method == 'Metric' ) {
       this.weightOption = 'pounds';
       this.heightOption = 'inches';
       this.method = 'Imperial';
