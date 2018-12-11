@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { empty } from 'rxjs/Observer';
 
 @IonicPage()
 @Component({
@@ -14,14 +15,17 @@ export class CalculatorPage {
   weightOption: string;
   heightOption: string;
   method: string;
+  switcher: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.weightOption = 'kg'
-    this.heightOption= 'cm'
-    this.method = 'Metric'
+    this.weightOption = 'kg';
+    this.heightOption= 'cm';
+    this.method = 'Metric';
+    this.switcher = false;
   }
 
   calculateBMI(){
+    this.switcher = true
     if( this.weight > 0 && this.height > 0 ) {
       let calculation;
       if(this.method == "Metric"){
@@ -50,6 +54,7 @@ export class CalculatorPage {
   }
 
   switchCounting() {
+    this.switcher = false
     if(this.method == 'Metric') {
       this.weightOption = 'pounds';
       this.heightOption = 'inches';
