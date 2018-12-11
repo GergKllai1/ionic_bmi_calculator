@@ -11,7 +11,7 @@ export class CalculatorPage {
   height: number;
   weight: number;
   bmiValue: number;
-  bmiMessage: string;
+  bmiMessage: any;
   weightOption: string;
   heightOption: string;
   method: string;
@@ -59,10 +59,14 @@ export class CalculatorPage {
       this.weightOption = 'pounds';
       this.heightOption = 'inches';
       this.method = 'Imperial';
+      this.weight = 0;
+      this.height= 0;
     }else{
       this.weightOption = 'kgs';
       this.heightOption = 'cms';
       this.method = 'Metric';
+      this.weight = 0;
+      this.height= 0;
     }
   }
 
