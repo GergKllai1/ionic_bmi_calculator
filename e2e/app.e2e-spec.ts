@@ -18,5 +18,13 @@ describe('App', () => {
       expect(page.result_content()).toContain('Have BMI value of 27.78')
       expect(page.result_content()).toContain('And considered to be overweight')
     });
+    
+    it('can change method when clicking on the change method', () => {
+      page.changeMethod();
+      expect(page.weight_option()).toContain('pounds')
+      expect(page.height_option()).toContain('inches')
+      expect(page.method_title()).toContain('Imperial')
+    });
   })
+  
 });

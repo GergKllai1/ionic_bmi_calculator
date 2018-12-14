@@ -6,14 +6,14 @@
         </ion-navbar>
     </ion-header>
 <ion-content>
-    <h2>{{method}}</h2>
+    <h2 id='title'>{{method}}</h2>
     <ion-list>
         <ion-item>
-            <ion-label floating>Weight ({{weightOption}})</ion-label>
+            <ion-label floating id='weightoption'>Weight ({{weightOption}})</ion-label>
             <ion-input type="number" [(ngModel)]="weight" id='weight'></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label floating>Height ({{heightOption}})</ion-label>
+            <ion-label floating id='heightoption'>Height ({{heightOption}})</ion-label>
             <ion-input type="number" [(ngModel)]="height" id='height'></ion-input>
         </ion-item>
     </ion-list>
