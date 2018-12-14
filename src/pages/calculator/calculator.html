@@ -10,11 +10,11 @@
     <ion-list>
         <ion-item>
             <ion-label floating>Weight ({{weightOption}})</ion-label>
-            <ion-input type="number" [(ngModel)]="weight"></ion-input>
+            <ion-input type="number" [(ngModel)]="weight" id='weight'></ion-input>
         </ion-item>
         <ion-item>
             <ion-label floating>Height ({{heightOption}})</ion-label>
-            <ion-input type="number" [(ngModel)]="height"></ion-input>
+            <ion-input type="number" [(ngModel)]="height" id='height'></ion-input>
         </ion-item>
     </ion-list>
 
@@ -29,7 +29,7 @@
         <ion-card-header>
             BMI Calculation
         </ion-card-header>
-        <ion-card-content>
+        <ion-card-content id="results">
             <p>You, who weight <strong>{{this.weight}} {{this.weightOption}}</strong> and are about <strong>{{this.height}} {{this.heightOption}}</strong> height</p>
             <p>Have BMI value of <strong>{{bmiValue}}</strong></p>
             <p>And considered to be <strong>{{bmiMessage}}</strong></p>

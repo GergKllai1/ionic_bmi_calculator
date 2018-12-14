@@ -31,13 +31,6 @@ describe("CalculatorPage", () => {
         expect(calculatorpage instanceof CalculatorPage).toEqual(true);
     })
 
-    it('should have a calculator function', () => {
-        spyOn(calculatorpage, 'calculateBMI');
-
-        calculatorpage.calculateBMI();
-
-        expect(calculatorpage.calculateBMI).toHaveBeenCalled();
-    });
 
     it('calculate should return obese', () => {
         calculatorpage.weight = 190
