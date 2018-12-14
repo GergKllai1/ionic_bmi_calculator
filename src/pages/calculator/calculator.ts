@@ -69,9 +69,4 @@ export class CalculatorPage {
       this.height= 0;
     }
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CalculatorPage');
-  }
-
 }

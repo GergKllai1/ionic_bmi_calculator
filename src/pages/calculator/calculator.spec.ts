@@ -23,6 +23,7 @@ describe("CalculatorPage", () => {
         })
         fixture = TestBed.createComponent(CalculatorPage);
         calculatorpage = fixture.componentInstance;
+        calculatorpage.height = 180;
     })
 
     it('should create a calculator page', () => {
@@ -39,7 +40,6 @@ describe("CalculatorPage", () => {
     });
 
     it('calculate should return obese', () => {
-        calculatorpage.height = 180
         calculatorpage.weight = 190
 
         calculatorpage.calculateBMI();
@@ -49,7 +49,6 @@ describe("CalculatorPage", () => {
     });
 
     it('calculate should return overweight', () => {
-        calculatorpage.height = 180
         calculatorpage.weight = 90
 
         calculatorpage.calculateBMI();
@@ -60,7 +59,6 @@ describe("CalculatorPage", () => {
 
 
     it('calculate should return normal', () => {
-        calculatorpage.height = 180
         calculatorpage.weight = 80
 
         calculatorpage.calculateBMI();
@@ -69,7 +67,6 @@ describe("CalculatorPage", () => {
     });
 
     it('calculate should return underweight', () => {
-        calculatorpage.height = 180
         calculatorpage.weight = 9
 
         calculatorpage.calculateBMI();
@@ -77,6 +74,34 @@ describe("CalculatorPage", () => {
         expect(calculatorpage.bmiMessage).toEqual('underweight')
     });
 
+    it('calculate should with imperial method', () => {
+        calculatorpage.method = 'Imperial'
+        calculatorpage.weight = 200
 
+        calculatorpage.calculateBMI();
+        expect(calculatorpage.bmiValue).toEqual(4.34);
+        expect(calculatorpage.bmiMessage).toEqual('underweight')
+    });
+
+    it('should change to imperial on switch method', () => {
+        calculatorpage.switchCounting()
+
+        calculatorpage.weightOption = 'pounds';
+        calculatorpage.heightOption = 'inches';
+        calculatorpage.method = 'Imperial';
+        calculatorpage.weight = 0;
+        calculatorpage.height= 0;
+    })
+
+    it('should change to metric on switch method', () => {
+        calculatorpage.method = 'Imperial';
+        calculatorpage.switchCounting()
+
+        calculatorpage.weightOption = 'kgs';
+        calculatorpage.heightOption = 'cms';
+        calculatorpage.method = 'Metric';
+        calculatorpage.weight = 0;
+        calculatorpage.height= 0;
+    })
 
 })
