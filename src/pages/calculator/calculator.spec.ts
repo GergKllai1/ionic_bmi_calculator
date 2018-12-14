@@ -29,4 +29,54 @@ describe("CalculatorPage", () => {
         expect(calculatorpage).toBeTruthy;
         expect(calculatorpage instanceof CalculatorPage).toEqual(true);
     })
+
+    it('should have a calculator function', () => {
+        spyOn(calculatorpage, 'calculateBMI');
+
+        calculatorpage.calculateBMI();
+
+        expect(calculatorpage.calculateBMI).toHaveBeenCalled();
+    });
+
+    it('calculate should return obese', () => {
+        calculatorpage.height = 180
+        calculatorpage.weight = 190
+
+        calculatorpage.calculateBMI();
+
+        expect(calculatorpage.bmiValue).toEqual(58.64);
+        expect(calculatorpage.bmiMessage).toEqual('obese')
+    });
+
+    it('calculate should return overweight', () => {
+        calculatorpage.height = 180
+        calculatorpage.weight = 90
+
+        calculatorpage.calculateBMI();
+
+        expect(calculatorpage.bmiValue).toEqual(27.78);
+        expect(calculatorpage.bmiMessage).toEqual('overweight')
+    });
+
+
+    it('calculate should return normal', () => {
+        calculatorpage.height = 180
+        calculatorpage.weight = 80
+
+        calculatorpage.calculateBMI();
+        expect(calculatorpage.bmiValue).toEqual(24.69);
+        expect(calculatorpage.bmiMessage).toEqual('normal weight')
+    });
+
+    it('calculate should return underweight', () => {
+        calculatorpage.height = 180
+        calculatorpage.weight = 9
+
+        calculatorpage.calculateBMI();
+        expect(calculatorpage.bmiValue).toEqual(2.78);
+        expect(calculatorpage.bmiMessage).toEqual('underweight')
+    });
+
+
+
 })
