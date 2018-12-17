@@ -45,7 +45,7 @@ export class CalculatorPage {
     else if ( this.bmiValue > 18.5 && this.bmiValue < 25 ) {
       this.bmiMessage = "normal weight";
     }
-    else if ( this.bmiValue > 25 ) {
+    else if ( this.bmiValue > 25 && this.bmiValue < 30) {
       this.bmiMessage = "overweight";
     }
     else if ( this.bmiValue > 30 ) {
@@ -69,9 +69,4 @@ export class CalculatorPage {
       this.height= 0;
     }
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CalculatorPage');
-  }
-
 }
